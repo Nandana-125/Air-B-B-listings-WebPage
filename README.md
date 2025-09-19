@@ -31,8 +31,8 @@ listings.json -> JSON data with Airbnb listings (needed to run)
 1. Clone this repository:
 
    ```bash
-   git clone <your-repo-url>
-   cd <your-repo-name>
+   git clone 
+   cd 
    ```
 
    Make sure listings.json is inside the project folder.
@@ -42,7 +42,7 @@ Open the local URL (for example, http://localhost:8080) in your browser.
 
 ## Deployment
 
-The project is deployed using Netlify:
+The project is deployed using Netlify:https://euphonious-brigadeiros-699fd8.netlify.app/
 
 ## Technologies Used
 
