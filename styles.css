@@ -1,0 +1,131 @@
+body {
+  margin: 0; /* remove default page margin */
+  padding: 0; /* remove default page padding */
+  overflow-x: hidden; /* prevent accidental sideways scroll */
+  overflow-y: auto; /* allow vertical scrolling when needed */
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers horizontally */
+  align-items: center;
+  text-align: center;
+}
+
+/* Page wrapper */
+.page {
+  width: 100vw; /* full viewport width */
+  height: 100vh; /* full viewport height */
+}
+
+/* grid columns */
+.container {
+  width: 80%; /* readable line length (not full width) */
+  margin: 0 auto; /* center the container */
+  column-count: 3; /* number of columns */
+  column-gap: 50px; /* space between columns */
+  padding: 20px 0; /* top/bottom space */
+}
+
+/* Card / listing  */
+.listings {
+  display: inline-block; /* needed so cards flow inside columns */
+  width: 100%; /* card spans the column width */
+  margin: 0 0 20px; /* space below each card */
+  break-inside: avoid; /* keep a card from splitting across columns */
+  background: #fff; /* white card background */
+  border-radius: 6px; /* soft rounded corners */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.24); /* subtle elevation */
+  padding: 15px; /* inner spacing for content */
+}
+
+/*  Host row , it has profile and name of the host  */
+.host {
+  display: flex; /* place profile and name in a row */
+  align-items: center; /* vertically center them */
+  gap: 10px; /* space between profile  and text  */
+  margin-top: 10px; /* separate from content above */
+}
+
+.host-photo {
+  width: 50px; /* profile width */
+  height: 50px; /* profile height */
+  border-radius: 50%; /* make it a circle */
+  object-fit: cover; /* crop nicely inside the circle */
+}
+
+/* Expandable details area */
+.details {
+  max-height: 0; /* start collapsed */
+  overflow: hidden; /* hide the collapsed content */
+  transition: max-height 0.3s ease; /* smooth open/close */
+}
+
+.listings.open .details {
+  max-height: 1000px; /* room for expanded content */
+  margin-top: 10px; /* little gap above details when open */
+}
+
+/*  Toggle button  */
+.toggle-btn {
+  margin-top: 10px; /* space above the button */
+  padding: 8px 12px;
+  background: #0073e6;
+  color: #fff;
+  border: none; /* remove default button border */
+  border-radius: 5px; /* rounded button */
+  cursor: pointer; /* show it's clickable */
+}
+
+.toggle-btn:hover {
+  background: #005bb5; /* darker on hover  */
+}
+
+/* Thumbnail image  */
+.thumbnail {
+  width: 100%; /* fill the card width */
+  height: 200px; /* fixed height for consistent rows */
+  object-fit: cover; /* crop to fill without distortion */
+  border-radius: 6px; /* match card rounding */
+  background: #f0f0f0; /* neutral placeholder color while loading */
+}
+/*  Rent button */
+/* css from : https://www.bestcssbuttongenerator.com/#/34*/
+.rent-button {
+  box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+  background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+  background-color: #b8e356;
+  border-radius: 6px;
+  border: 1px solid #83c41a;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #86ae47;
+}
+.rent-button:hover {
+  background: linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+  background-color: #a5cc52;
+}
+.rent-button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* Responsive columns  */
+@media (max-width: 900px) {
+  .container {
+    column-count: 2; /* fewer columns on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    column-count: 1; /* single column on small screens */
+  }
+}
